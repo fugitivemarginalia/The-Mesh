@@ -21,6 +21,7 @@ function App() {
   center={[52.703, -8.864]}
   zoom={11}
   scrollWheelZoom={false}
+   doubleClickZoom={true}
   style={{ height: '100%', width: '100%' }}
 >
 
