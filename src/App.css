@@ -91,7 +91,7 @@ button {
 .map-placeholder {
   position: relative;
   overflow: hidden;
-  height: 65vh;
+  height: 58vh;
   background: rgba(255,255,255,0.18);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255,255,255,0.35);
