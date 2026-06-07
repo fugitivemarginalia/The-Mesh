@@ -8,13 +8,13 @@ body {
   #f0f198 35%,
   #f4f1ea 100%
 );
-#hero {
-
-  padding: 2rem 2rem 1rem 2rem;
-
   text-align: center;
+  color: #222;
 }
-  color: #222;} 
+
+#hero {
+  padding: 1.2rem 2rem 0.4rem 2rem;
+} 
 
 #center {
   min-height: 100vh;
@@ -26,13 +26,15 @@ body {
 }
 
 h1{
-  font-size: clamp(3rem, 8vw, 6rem);
+   font-size: clamp(2.2rem, 5vw, 4rem);
 
   line-height: 0.95;
 
   letter-spacing: -0.04em;
 
-  font-weight: 600;
+  font-weight: 500;
+
+  margin-bottom: 1rem;
 
   max-width: 900px;
 
@@ -66,7 +68,7 @@ p {
 
   max-width: 620px;
 
-  margin: 0 auto;
+  margin: 0 auto 0.8rem auto;
 
   opacity: 0.82;
 } 
