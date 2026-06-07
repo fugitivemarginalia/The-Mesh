@@ -27,7 +27,7 @@ function App() {
 
   <TileLayer
     attribution='&copy; OpenStreetMap contributors'
-     url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+     url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
 />
 
 </MapContainer>
