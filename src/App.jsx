@@ -18,11 +18,10 @@ function App() {
   <section id="map-section">
   
   <div className="map-placeholder">
-    <MapContainer
-center={[52.711114, -8.884069
 
-]}
-zoom={16}
+<MapContainer
+  center={[52.711114, -8.884069]}
+  zoom={14}
   scrollWheelZoom={false}
   doubleClickZoom={true}
 
