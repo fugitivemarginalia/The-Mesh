@@ -18,7 +18,7 @@ function App() {
   
   <div className="map-placeholder">
     <MapContainer
-center={[ 52.7095349702111, -8.886991875751638
+center={[ 52.711114, -8.884069
 
 ]}
 zoom={13}
