@@ -71,19 +71,14 @@ color: #f3cb19;
 }
 
 .map-placeholder {
-  position: relative;
-  overflow: hidden;
-  height: 48vh;
-  background: rgba(255,255,255,0.18);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.35);
-  border-radius: 20px;
-max-width: 92%;
-margin: 0 auto;
-  display: block;
-  padding: 0;
+  .map-placeholder {
 
-  font-size: 1.2rem;
+  height: 58vh;
+
+  width: 100%;
+
+  background: red;
+}
 } 
 .map-placeholder::before {
 
