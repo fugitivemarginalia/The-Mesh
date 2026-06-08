@@ -18,10 +18,10 @@ function App() {
   
   <div className="map-placeholder">
     <MapContainer
-center={[ 52.711114, -8.884069
+center={[52.711114, -8.884069
 
 ]}
-zoom={13}
+zoom={14}
   scrollWheelZoom={false}
   doubleClickZoom={true}
 
