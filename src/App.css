@@ -2,8 +2,14 @@
 body {
   margin: 0;
   font-family: "Source Sans", sans-serif;
-  background: #02455fa6;
-  
+  background: #02455fa6 
+  url('/texture.png');
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-attachment: fixed;
 }
 
 #hero {
