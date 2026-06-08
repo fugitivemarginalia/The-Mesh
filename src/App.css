@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: "Source Sans", sans-serif;
-  background: #02455fa6 
+  background-color: #02455fa6 
   url('/texture.png');
 
   background-size: cover;
