@@ -27,19 +27,12 @@ function App() {
 
   <TileLayer
     attribution='&copy; OpenStreetMap contributors'
-     url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
+
+  url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
 />
 
 </MapContainer>
 
-  <div className="floating-card">
-    <h3>River Walk</h3>
-    <p>
-      Paths, stories, habitats, and local observations connected
-    to the estuary edge.
-    </p>
-  </div>
-  <div className="connection-line"></div>
   
 </div>
   
