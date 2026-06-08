@@ -2,13 +2,8 @@
 body {
   margin: 0;
   font-family: "Source Sans", sans-serif;
-  background: l(
-  to bottom right,
-  #02455fa6 100%,
+  background: #02455fa6;
   
-);
-
-  color: #222;
 }
 
 #hero {
