@@ -21,7 +21,7 @@ function App() {
 center={[52.711114, -8.884069
 
 ]}
-zoom={14}
+zoom={16}
   scrollWheelZoom={false}
   doubleClickZoom={true}
 
