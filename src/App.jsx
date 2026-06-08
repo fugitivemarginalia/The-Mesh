@@ -18,13 +18,19 @@ function App() {
   
   <div className="map-placeholder">
     <MapContainer
-  center={[52.703, -8.864]}
+center={[52.703, -8.864]}
   zoom={14}
   scrollWheelZoom={false}
-   doubleClickZoom={true}
+  doubleClickZoom={true}
+
+  whenReady={(map) => {
+    setTimeout(() => {
+      map.target.invalidateSize()
+    }, 300)
+  }}
+
   style={{ height: '100%', width: '100%' }}
 >
-
   <TileLayer
     attribution='&copy; OpenStreetMap contributors'
 
