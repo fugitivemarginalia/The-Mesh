@@ -8,12 +8,13 @@ body {
    #1d88b36e 35%,
   #76bcd8a6 100%
 );
-  text-align: center;
+
   color: #222;
 }
 
 #hero {
   padding: 1.2rem 2rem 0.4rem 2rem;
+  text-align: center;
 } 
 
 #center {
@@ -98,8 +99,7 @@ button {
 max-width: 92%;
 margin: 0 auto;
   display: block;
-  justify-content: center;
-  align-items: center;
+  
 
   font-size: 1.2rem;
 } 
@@ -126,76 +126,5 @@ margin: 0 auto;
 
   opacity: 0.8;
 }
-.filters {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
 
-  margin-bottom: 1
-  rem;
-}
 
-.filter {
-  padding: 0.7rem 1.2rem;
-
-  border-radius: 999px;
-
-  border: 1px solid rgba(0,0,0,0.1);
-
-  background: rgba(9, 222, 250, 0.5);
-
-  backdrop-filter: blur(6px);
-
-  cursor: pointer;
-}
-
-.filter.active {
-  background: black;
-  color: white;
-}
-.floating-card {
-
-  position: absolute;
-
-  top: 40%;
-  left: 50%;
-
-  transform: translate(-50%, -50%);
-
-  width: 260px;
-
-  padding: 1rem;
-
-  border-radius: 18px;
-
-  background: rgba(255,255,255,0.75);
-
-  border: 1px solid rgba(255,255,255,0.45);
-
-  backdrop-filter: blur(10px);
-
-  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-
-   z-index: 2; 
-}
-
-.floating-card h3 {
-  margin-top: 0;
-}
-.connection-line {
-
-  position: absolute;
-
-  width: 180px;
-  height: 2px;
-
- 
-  background: rgba(255,255,255,0.35);
-
-  top: 52%;
-  left: 58%;
-
-  transform: rotate(18deg);
-
-  border-radius: 999px;
-}
