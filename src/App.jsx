@@ -1,12 +1,12 @@
 import './App.css'
-import import { MapContainer, TileLayer, Marker } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker } from 'react-leaflet'
 function App() {
   return (<>
   <section id="hero">
     
     <div className="hero-content">
       <h1 className="title-button">
-  What is Shannon Sharing?
+  What is Shannon Sharing Test?
 </h1>
       <p>
   A living network for community knowledge, exchange, and participation.
