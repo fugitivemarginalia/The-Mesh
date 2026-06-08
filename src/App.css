@@ -17,14 +17,6 @@ body {
   text-align: center;
 } 
 
-#center {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 2rem;
-}
 
 h1{
    font-size: clamp(2rem, 4.8vw, 3.4rem);
@@ -73,16 +65,6 @@ color: #f3cb19;
 
   opacity: 0.82;
 } 
-button {
-  margin-top: 1.2rem;
-  padding: 1rem 2rem;
-  border: none;
-  background: rgb(0, 0, 0);
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 8px;
-}
 #map-section {
     margin-bottom: 4rem;
 
@@ -105,6 +87,7 @@ margin: 0 auto;
 } 
 .map-placeholder::before {
 
+pointer-events: none;
   content: "";
 
   position: absolute;
