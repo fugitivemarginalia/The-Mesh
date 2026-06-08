@@ -1,6 +1,6 @@
 import './App.css'
 import 'leaflet/dist/leaflet.css'
-import { MapContainer, TileLayer, Marker } from 'react-leaflet'
+import { MapContainer, TileLayer } from 'react-leaflet'
 function App() {
   return (<>
   <section id="hero">
