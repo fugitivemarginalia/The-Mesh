@@ -1,5 +1,5 @@
 import './App.css'
-import { MapContainer, TileLayer } from 'react-leaflet'
+import import { MapContainer, TileLayer, Marker } from 'react-leaflet'
 function App() {
   return (<>
   <section id="hero">
@@ -58,7 +58,7 @@ zoom={16}
       attribution='&copy; OpenStreetMap contributors'
       url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
     />
-
+<Marker position={[52.709260, -8.878071]} />
   </MapContainer>
 </div>
 </MapContainer>
