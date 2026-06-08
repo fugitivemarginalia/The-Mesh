@@ -39,30 +39,8 @@ zoom={16}
 
   url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
 />
-<div className="map-inner">
-  <MapContainer
-    center={[52.709260, -8.878071]}
-    zoom={13}
-    scrollWheelZoom={false}
-    doubleClickZoom={true}
 
-    whenReady={(map) => {
-      setTimeout(() => {
-        map.target.invalidateSize()
-      }, 300)
-    }}
-
-    style={{ height: '100%', width: '100%' }}
-  >
-
-    <TileLayer
-      attribution='&copy; OpenStreetMap contributors'
-      url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
-    />
-<Marker position={[52.709260, -8.878071]} />
-  </MapContainer>
-</div>
-</MapContainer>
+    </MapContainer>
 
   
 </div>
