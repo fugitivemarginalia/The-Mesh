@@ -19,7 +19,7 @@ function App() {
   <div className="map-placeholder">
     <MapContainer
   center={[52.703, -8.864]}
-  zoom={14}
+  zoom={18}
   scrollWheelZoom={false}
    doubleClickZoom={true}
   style={{ height: '100%', width: '100%' }}
