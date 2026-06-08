@@ -2,11 +2,10 @@
 body {
   margin: 0;
   font-family: "Source Sans", sans-serif;
-  background: linear-gradient(
+  background: l(
   to bottom right,
-  #025170a6 15%,
-   #1d88b36e 35%,
-  #76bcd8a6 100%
+  #02455fa6 100%,
+  
 );
 
   color: #222;
