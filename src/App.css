@@ -2,13 +2,11 @@
 body {
   margin: 0;
   font-family: "Source Sans", sans-serif;
-  background-color: #02455fa6 
-  url('/texture.png');
-
+  background-color: #02455fa6; 
+  background-image: url('/texture.png');
   background-size: cover;
-
   background-position: center;
-
+  background-blend-mode: multiply;
   background-attachment: fixed;
 }
 
