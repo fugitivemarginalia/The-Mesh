@@ -21,7 +21,7 @@ body {
   position: absolute;
   top: 60px;
   left: 85px;
-  color: rgb(255, 220, 120);
+  color: rgba(255, 219, 120, 0.665);
   text-shadow:  0 0 2px rgba(255,220,120,0.18);
   border: 1px solid rgba(255, 211, 100, 0.35);
 

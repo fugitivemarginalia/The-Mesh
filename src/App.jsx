@@ -5,7 +5,10 @@ function App() {
   return (<>
  <div className="controls">
 
-  <button className="hear">Hear</button>
+ <button className="hear">
+  <div className="icon">◔</div>
+  <div className="label">Hear</div>
+</button>
 
   <button className="hold">Hold</button>
 
