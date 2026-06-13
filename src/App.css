@@ -121,25 +121,27 @@ p {
     0 0 18px rgba(220, 170, 255, 0.25);
 }
 .controls button {
-  width: 68px;
-  height: 68px;
+  width: 72px;
+  height: 72px;
 
   border-radius: 50%;
 
-  border: none;
-
-  background: rgba(0, 0, 0, 0.06);
+  background: rgba(0, 0, 0, 0.08);
 
   color: white;
 
   font-size: 0.78rem;
-
   font-weight: 400;
 
   cursor: pointer;
 
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(6px);
+
+  border: none;
 }
+
+
+
 .controls button:hover {
   background: rgba(30, 30, 30, 0.75);
 
