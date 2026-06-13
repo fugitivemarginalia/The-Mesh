@@ -56,16 +56,14 @@ body {
   position: absolute;
   top: 140px;
   left: 135px;
-  color: rgba(120, 190, 255, 0.7);
-  text-shadow:
-    0 0 4px rgba(120, 190, 255, 0.8),
-    0 0 10px rgba(120, 190, 255, 0.5);
-  border: 1px solid rgba(120, 190, 255, 0.951);
+  color: rgba(120, 190, 255, 0.615);
+  
+  border: 1px solid rgba(120, 190, 255, 0.567);
    box-shadow:inset 0 0 35px rgba(120, 190, 255, 0.3),
-    0 0 8px  rgba(120, 190, 255, 0.6),
+    0 0 8px  rgba(120, 190, 255, 0.32),
     0 0 20px rgba(120, 190, 255, 0.4),
-    0 0 45px rgba(120, 190, 255, 0.2),
-    0 0 80px rgba(120, 190, 255, 0.08);
+    0 0 45px #78beff47,
+    0 0 80px rgba(120, 190, 255, 0.133);
 }
 
 
@@ -73,16 +71,15 @@ body {
   position: absolute;
   top: 220px;
   left: 85px;
-  color: rgba(220, 170, 255, 0.929);
-  text-shadow:
-   
-  border: 1px solid rgba(220, 170, 255, 0.688);
+  color: rgba(220, 170, 255, 0.672);
+
+  border: 1px solid rgba(220, 170, 255, 0.442);
   box-shadow:
     inset 0 0 35px rgba(220, 170, 255, 0.348),
     0 0 8px  rgba(220, 170, 255, 0.371),
     0 0 20px rgba(220, 170, 255, 0.4),
-    0 0 65px rgba(220, 170, 255, 0.2),
-    0 0 100px rgba(220, 170, 255, 0.111);
+    0 0 65px rgba(220, 170, 255, 0.27),
+    0 0 100px rgba(220, 170, 255, 0.144);
 }
 
 .controls button {
