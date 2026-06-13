@@ -10,63 +10,6 @@ body {
   background-attachment: fixed;
 }
 
-#hero {
-  padding: 1.2rem 2rem 0.4rem 2rem;
-  text-align: center;
-} 
-
-
-h1{
-   font-size: clamp(2rem, 4.8vw, 3.4rem);
-
-  line-height: 0.95;
-
-  letter-spacing: -0.04em;
-
-  font-weight: 500;
-
-  margin-bottom: 1rem;
-
-  max-width: 900px;
-
-  margin: 0 auto 1.5rem auto;
-}
-.title-button {
-
-  position: relative;
-
-  display: inline-block;
-
-  cursor: pointer;
-
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease,
-    letter-spacing 0.3s ease;
-}
-.title-button:hover {
-
-  opacity: 0.82;
-
-  transform: translateY(-2px);
-
-  letter-spacing: -0.02em;
-}
-p {
-   font-size: 1.15rem;
-
-  line-height: 1.7;
-  color: #f3cb19;
-  max-width: 320px;
-
-  margin: 0 auto 0.8rem auto;
-
-  opacity: 0.82;
-} 
-#map-section {
-    margin-bottom: 4rem;
-
-}
 .controls {
   position: absolute;
   top: 0px;
