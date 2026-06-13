@@ -76,8 +76,8 @@ p {
 }
 .hear {
   position: absolute;
-  top: 30px;
-  left: 70px;
+  top: 60px;
+  left: 80px;
 }
 
 .hold {
@@ -94,8 +94,9 @@ p {
 
 .tend {
   position: absolute;
-  top: 260px;
-  left: 70px;
+  top: 200px;
+
+  left: 80px;
 }
 .controls button {
   width: 70px;
