@@ -6,8 +6,13 @@ function App() {
  <div className="controls">
 
  <button className="hear">
-  <div className="icon">◔</div>
-  <div className="label">Hear</div>
+ <div className="hear-ring">
+    <div className="hear-inner">
+      <div className="icon">◔</div>
+      <div className="label">Hear</div>
+    </div>
+  </div>
+
 </button>
 
   <button className="hold">Hold</button>
