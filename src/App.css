@@ -25,7 +25,7 @@ body {
    text-shadow:
     0 0 4px rgba(255, 220, 120, 0.8),
     0 0 10px rgba(255, 220, 120, 0.5);
-  border: 1.5px solid rgba(255, 211, 100, 0.35);
+  border: 1.5px solid rgba(255, 211, 100, 0.925);
 
   box-shadow:
     inset 0 0 35px rgba(255, 210, 100, 0.3),
@@ -43,7 +43,7 @@ body {
   text-shadow:
     0 0 4px rgba(140, 255, 180, 0.8),
     0 0 10px rgba(140, 255, 180, 0.5);
-  border: 1px solid rgba(140, 255, 180, 0.397);
+  border: 1px solid rgba(140, 255, 180, 0.911);
   box-shadow:
     inset 0 0 35px rgba(140, 255, 180, 0.3),
     0 0 8px  rgba(140, 255, 180, 0.6),
@@ -60,7 +60,7 @@ body {
   text-shadow:
     0 0 4px rgba(120, 190, 255, 0.8),
     0 0 10px rgba(120, 190, 255, 0.5);
-  border: 1px solid rgba(120, 190, 255, 0.783);
+  border: 1px solid rgba(120, 190, 255, 0.951);
    box-shadow:inset 0 0 35px rgba(120, 190, 255, 0.3),
     0 0 8px  rgba(120, 190, 255, 0.6),
     0 0 20px rgba(120, 190, 255, 0.4),
@@ -77,7 +77,7 @@ body {
   text-shadow:
     0 0 4px rgba(220, 170, 255, 0.8),
     0 0 10px rgba(220, 170, 255, 0.5);
-  border: 1px solid rgba(220, 170, 255, 0.35);
+  border: 1px solid rgba(220, 170, 255, 0.913);
   box-shadow:
     inset 0 0 35px rgba(220, 170, 255, 0.3),
     0 0 8px  rgba(220, 170, 255, 0.6),
