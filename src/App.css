@@ -105,8 +105,10 @@ body {
 }
 
 .controls button .icon {
-  font-size: 16px;
-  line-height: 1;
+   width: 30px;
+  height: 30px;
+  stroke: currentColor;
+  stroke-width: 1;
 }
 
 .controls button .label {

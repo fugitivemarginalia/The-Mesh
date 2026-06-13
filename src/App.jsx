@@ -1,27 +1,28 @@
 import './App.css'
 import 'leaflet/dist/leaflet.css'
 import { MapContainer, TileLayer } from 'react-leaflet'
+import { Ear, Hand, Footprints, Sprout } from 'lucide-react'
 function App() {
   return (<>
  <div className="controls">
   <button className="hear">
-    <span className="icon">◑</span>
+    <Ear className="icon" />
     <span className="label">Hear</span>
   </button>
 
   <button className="hold">
-    <span className="icon">◑</span>
+   <Hand className="icon" />   
     <span className="label">Hold</span>
   </button>
 
   <button className="walk">
-    <span className="icon">◑</span>
+   <Footprints className="icon" />
     <span className="label">Walk</span>
   </button>
 
   <button className="tend">
-    <span className="icon">◑</span>
-    <span className="label">Tend</span>
+   <Sprout className="icon" />
+   <span className="label">Tend</span>
   </button>
 </div>
   
