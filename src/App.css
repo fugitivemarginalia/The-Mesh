@@ -77,25 +77,25 @@ p {
 .hear {
   position: absolute;
   top: 30px;
-  left: 40px;
+  left: 60px;
 }
 
 .hold {
   position: absolute;
-  top: 120px;
+  top: 140px;
   left: 20px;
 }
 
 .walk {
   position: absolute;
-  top: 110px;
-  left: 150px;
+  top: 140px;
+  left: 20px;
 }
 
 .tend {
   position: absolute;
-  top: 210px;
-  left: 60px;
+  top: 260px;
+  left: 70px;
 }
 .controls button {
   width: 70px;
