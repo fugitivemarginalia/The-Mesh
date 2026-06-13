@@ -121,8 +121,8 @@ p {
     0 0 18px rgba(220, 170, 255, 0.25);
 }
 .controls button {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
 
   border-radius: 50%;
 
@@ -149,7 +149,7 @@ p {
 
   backdrop-filter: blur(6px);
 
-  position: relative;
+  
 }
 
 .controls button:hover {
@@ -158,4 +158,26 @@ p {
 
   box-shadow:
     0 0 20px rgba(255,255,255,0.12);
+}
+.controls button::before {
+  content: '';
+
+  position: absolute;
+
+  inset: -2px;
+
+  border-radius: 50%;
+
+  padding: 1px;
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite: xor;
+
+  mask-composite: exclude;
 }
