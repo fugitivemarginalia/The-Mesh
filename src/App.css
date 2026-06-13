@@ -33,7 +33,7 @@ body {
   position: absolute;
   top: 140px;
   left: 35px;
-  border: 1px solid rgba(140, 255, 180, 0.603);
+  border: 1px solid rgba(140, 255, 180, 0.397);
   box-shadow:
     inset 0 0 12px rgba(140, 255, 180, 0.08),
     0 0 18px rgba(17, 220, 88, 0.25);
