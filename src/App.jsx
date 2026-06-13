@@ -4,24 +4,27 @@ import { MapContainer, TileLayer } from 'react-leaflet'
 function App() {
   return (<>
  <div className="controls">
+  <button className="hear">
+    <span className="icon">◑</span>
+    <span className="label">Hear</span>
+  </button>
 
- <button className="hear">
- <div className="hear-ring">
-    <div className="hear-inner">
-      <div className="icon">◔</div>
-      <div className="label">Hear</div>
-    </div>
-  </div>
+  <button className="hold">
+    <span className="icon">◑</span>
+    <span className="label">Hold</span>
+  </button>
 
-</button>
+  <button className="walk">
+    <span className="icon">◑</span>
+    <span className="label">Walk</span>
+  </button>
 
-  <button className="hold">Hold</button>
-
-  <button className="walk">Walk</button>
-
-  <button className="tend">Tend</button>
-
+  <button className="tend">
+    <span className="icon">◑</span>
+    <span className="label">Tend</span>
+  </button>
 </div>
+  
 <MapContainer
   center={[52.711114, -8.877]}
   zoom={15}
