@@ -77,13 +77,13 @@ body {
   text-shadow:
     0 0 4px rgba(220, 170, 255, 0.8),
     0 0 10px rgba(220, 170, 255, 0.5);
-  border: 1px solid rgba(220, 170, 255, 0.913);
+  border: 1px solid rgba(220, 170, 255, 0.921);
   box-shadow:
-    inset 0 0 35px rgba(220, 170, 255, 0.3),
+    inset 0 0 35px rgba(220, 170, 255, 0.348),
     0 0 8px  rgba(220, 170, 255, 0.6),
     0 0 20px rgba(220, 170, 255, 0.4),
-    0 0 45px rgba(220, 170, 255, 0.2),
-    0 0 80px rgba(220, 170, 255, 0.08);
+    0 0 65px rgba(220, 170, 255, 0.2),
+    0 0 100px rgba(220, 170, 255, 0.111);
 }
 
 .controls button {
