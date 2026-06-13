@@ -3,7 +3,9 @@ import 'leaflet/dist/leaflet.css'
 import { MapContainer, TileLayer } from 'react-leaflet'
 function App() {
   return (<>
- 
+ <div className="controls">
+  <button>Noticing</button>
+</div>
 <MapContainer
   center={[52.711114, -8.877]}
   zoom={15}
