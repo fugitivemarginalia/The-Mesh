@@ -68,23 +68,3 @@ p {
 
 }
 
-.map-placeholder {
-
-  position: relative;
-
-  overflow: hidden;
-
-  height: 58vh;
-
-  width: 92%;
-
-  margin: 0 auto;
-
-  background: rgba(255,255,255,0.18);
-
-  backdrop-filter: blur(12px);
-
-  border: 1px solid rgba(255,255,255,0.35);
-
-  border-radius: 20px;
-}

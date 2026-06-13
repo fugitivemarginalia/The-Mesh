@@ -14,11 +14,7 @@ function App() {
 </p>
 
     </div>
-  </section>
-  <section id="map-section">
-  
-  <div className="map-placeholder">
-
+ </section>
 <MapContainer
   center={[52.711114, -8.877]}
   zoom={15}
@@ -31,23 +27,19 @@ function App() {
     }, 300)
   }}
 
-  style={{ height: '100%', width: '100%' }}
+  style={{
+    height: '100vh',
+    width: '100vw'
+  }}
 >
+
   <TileLayer
     attribution='&copy; OpenStreetMap contributors'
+    url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+  />
 
-  url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
-/>
-
-    </MapContainer>
-
-  
-</div>
-  
-</section>
-
-</>
-  )
+</MapContainer>
+                  </>
+    )
 }
-
 export default App
