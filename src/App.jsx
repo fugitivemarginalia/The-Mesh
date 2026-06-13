@@ -4,7 +4,15 @@ import { MapContainer, TileLayer } from 'react-leaflet'
 function App() {
   return (<>
  <div className="controls">
-  <button>Noticing</button>
+
+  <button className="hear">Hear</button>
+
+  <button className="hold">Hold</button>
+
+  <button className="walk">Walk</button>
+
+  <button className="tend">Tend</button>
+
 </div>
 <MapContainer
   center={[52.711114, -8.877]}
