@@ -28,39 +28,76 @@ body {
   border: 1.5px solid rgba(255, 211, 100, 0.35);
 
   box-shadow:
-    inset 0 0 12px rgba(255, 210, 100, 0.08),
-    0 0 18px rgba(255, 210, 100, 0.25);
+    inset 0 0 35px rgba(255, 210, 100, 0.3),
+    0 0 8px  rgba(255, 210, 100, 0.6),
+    0 0 20px rgba(255, 210, 100, 0.4),
+    0 0 45px rgba(255, 210, 100, 0.2),
+    0 0 80px rgba(255, 210, 100, 0.08);
+}
+
+.hold {
+  box-shadow:
+    inset 0 0 35px rgba(140, 255, 180, 0.3),
+    0 0 8px  rgba(140, 255, 180, 0.6),
+    0 0 20px rgba(140, 255, 180, 0.4),
+    0 0 45px rgba(140, 255, 180, 0.2),
+    0 0 80px rgba(140, 255, 180, 0.08);
+}
+
+.tend {
+  box-shadow:
+    inset 0 0 35px rgba(220, 170, 255, 0.3),
+    0 0 8px  rgba(220, 170, 255, 0.6),
+    0 0 20px rgba(220, 170, 255, 0.4),
+    0 0 45px rgba(220, 170, 255, 0.2),
+    0 0 80px rgba(220, 170, 255, 0.08);
 }
 
 .hold {
   position: absolute;
   top: 140px;
   left: 35px;
+  color: rgba(140, 255, 180, 0.7);
+  text-shadow:
+    0 0 4px rgba(140, 255, 180, 0.8),
+    0 0 10px rgba(140, 255, 180, 0.5);
   border: 1px solid rgba(140, 255, 180, 0.397);
   box-shadow:
-    inset 0 0 12px rgba(140, 255, 180, 0.08),
-    0 0 18px rgba(17, 220, 88, 0.25);
+    inset 0 0 20px rgba(140, 255, 180, 0.15),
+    0 0 18px rgba(17, 220, 88, 0.4),
+    0 0 40px rgba(17, 220, 88, 0.15);
 }
 
 .walk {
   position: absolute;
   top: 140px;
   left: 135px;
-   border: 1px solid rgba(120, 190, 255, 0.35);
-
-  box-shadow:
-    inset 0 0 12px rgba(120, 190, 255, 0.08),
-    0 0 18px rgba(120, 190, 255, 0.25);
+  color: rgba(120, 190, 255, 0.7);
+  text-shadow:
+    0 0 4px rgba(120, 190, 255, 0.8),
+    0 0 10px rgba(120, 190, 255, 0.5);
+  border: 1px solid rgba(120, 190, 255, 0.783);
+   box-shadow:inset 0 0 35px rgba(120, 190, 255, 0.3),
+    0 0 8px  rgba(120, 190, 255, 0.6),
+    0 0 20px rgba(120, 190, 255, 0.4),
+    0 0 45px rgba(120, 190, 255, 0.2),
+    0 0 80px rgba(120, 190, 255, 0.08);
 }
+
 
 .tend {
   position: absolute;
   top: 220px;
   left: 85px;
+  color: rgba(220, 170, 255, 0.7);
+  text-shadow:
+    0 0 4px rgba(220, 170, 255, 0.8),
+    0 0 10px rgba(220, 170, 255, 0.5);
   border: 1px solid rgba(220, 170, 255, 0.35);
   box-shadow:
-    inset 0 0 12px rgba(220, 170, 255, 0.08),
-    0 0 18px rgba(220, 170, 255, 0.25);
+    inset 0 0 20px rgba(220, 170, 255, 0.15),
+    0 0 18px rgba(220, 170, 255, 0.4),
+    0 0 40px rgba(220, 170, 255, 0.15);
 }
 
 .controls button {
