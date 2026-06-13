@@ -3,18 +3,7 @@ import 'leaflet/dist/leaflet.css'
 import { MapContainer, TileLayer } from 'react-leaflet'
 function App() {
   return (<>
-  <section id="hero">
-    
-    <div className="hero-content">
-      <h1 className="title-button">
-  What is Shannon Sharing Test?
-</h1>
-      <p>
-  A living network for community knowledge, exchange, and participation.
-</p>
-
-    </div>
- </section>
+ 
 <MapContainer
   center={[52.711114, -8.877]}
   zoom={15}
