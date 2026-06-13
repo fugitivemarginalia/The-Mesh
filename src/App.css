@@ -98,11 +98,20 @@ p {
   left: 60px;
 }
 .controls button {
-  background: rgba(20,20,20,0.85);
-  color: white;
+  width: 70px;
+  height: 70px;
+
+  border-radius: 50%;
+
   border: none;
-  padding: 8px 14px;
-  border-radius: 30px;
-  font-size: .85rem;
+
+  background: rgba(15, 15, 15, 0.75);
+
+  color: white;
+
   cursor: pointer;
+
+  backdrop-filter: blur(8px);
+
+  font-size: 0.9rem;
 }
