@@ -17,18 +17,6 @@ body {
   z-index: 1000;
 }
 
-.hear {
-  position: absolute;
-  top: 60px;
-  left: 85px;
-  color: rgba(255, 219, 120, 0.665);
-  text-shadow:  0 0 2px rgba(255,220,120,0.18);
-  border: 1px solid rgba(255, 211, 100, 0.35);
-
-  box-shadow:
-    inset 0 0 12px rgba(255, 210, 100, 0.08),
-    0 0 18px rgba(255, 210, 100, 0.25);
-}
 
 .hold {
   position: absolute;
