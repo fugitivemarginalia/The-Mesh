@@ -74,6 +74,29 @@ p {
   z-index: 1000;
   
 }
+.hear {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+}
+
+.hold {
+  position: absolute;
+  top: 120px;
+  left: 20px;
+}
+
+.walk {
+  position: absolute;
+  top: 110px;
+  left: 150px;
+}
+
+.tend {
+  position: absolute;
+  top: 210px;
+  left: 60px;
+}
 .controls button {
   background: rgba(20,20,20,0.85);
   color: white;
