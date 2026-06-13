@@ -16,7 +16,41 @@ body {
   left:0px;
   z-index: 1000;
 }
+.hear {
+  position: absolute;
+  top: 60px;
+  left: 85px;
 
+  width: 72px;
+  height: 72px;
+
+  border-radius: 50%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+
+  cursor: pointer;
+
+  background: radial-gradient(
+    circle at center,
+    rgba(0,0,0,0.35) 35%,
+    rgba(0,0,0,0.18) 55%,
+    rgba(255,210,100,0.12) 72%,
+    rgba(0,0,0,0.02) 100%
+  );
+
+  border: 1px solid rgba(255,210,100,0.75);
+
+  box-shadow:
+    inset 0 0 10px rgba(255,210,100,0.15),
+    0 0 8px rgba(255,210,100,0.45),
+    0 0 24px rgba(255,210,100,0.18);
+}
 
 .hold {
   position: absolute;
