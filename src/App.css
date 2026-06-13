@@ -80,11 +80,11 @@ p {
   top: 60px;
   left: 85px;
 
-  border: 1px solid rgba(255, 211, 100, 0.85);
+  border: 1.5px solid rgba(255, 211, 100, 0.935);
 
   box-shadow:
-    inset 0 0 12px rgba(255, 210, 100, 0.08),
-    0 0 18px rgba(255, 210, 100, 0.25);
+    inset 0 0 14px rgba(255, 210, 100, 0.08),
+    0 0 8px rgba(255, 210, 100, 0.55);
 }
 
 
@@ -121,26 +121,36 @@ p {
     0 0 18px rgba(220, 170, 255, 0.25);
 }
 .controls button {
-  width: 72px;
-  height: 72px;
+  width: 80px;
+  height: 80px;
 
   border-radius: 50%;
 
-  background: rgba(0, 0, 0, 0.08);
+  border: none;
 
-  color: white;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255,255,255,0.08) 0%,
+    rgba(255,255,255,0.03) 40%,
+    rgba(0,0,0,0.12) 70%,
+    rgba(0,0,0,0.25) 100%
+  );
 
-  font-size: 0.78rem;
-  font-weight: 400;
+  color: inherit;
+
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   cursor: pointer;
 
   backdrop-filter: blur(6px);
 
-  border: none;
+  position: relative;
 }
-
-
 
 .controls button:hover {
   background: rgba(30, 30, 30, 0.75);
