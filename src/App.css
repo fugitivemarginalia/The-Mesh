@@ -164,7 +164,8 @@ body {
   );
   border: 3px solid rgba(255, 255, 255, 0.87);
   color: rgba(255, 255, 255, 0.8);
-  font-size: 28px;
+  font-size: 14px;
+  font-family: 'Source Sans', sans-serif;
   cursor: pointer;
   pointer-events: all;
   display: flex;

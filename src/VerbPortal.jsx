@@ -21,7 +21,7 @@ function VerbPortal({ verb, onEnter, onExit }) {
   const { color, text } = portalContent[verb]
   return (
     <div className="portal" style={{ '--portal-color': color }}>
-      <button className="portal-exit" onClick={onExit}>×</button>
+     <button className="encounter-close" onClick={onExit}>✕</button>
       <p className="portal-text">{text}</p>
       <button className="portal-enter" onClick={onEnter}>Enter Place →</button>
     </div>

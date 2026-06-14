@@ -8,7 +8,7 @@ function App() {
   const [mode, setMode] = useState('explore')
   const [selectedVerb, setSelectedVerb] = useState(null)
   return (<>
-    {mode === 'explore' && <button className="encounter-trigger" onClick={() => { setMode('encounter'); setSelectedVerb(null) }}>+</button>}
+ {mode === 'explore' && <button className="encounter-trigger" onClick={() => { setMode('encounter'); setSelectedVerb(null) }}>Enter</button>}
  {mode === 'encounter' && <div className="controls">
   
 <button className="encounter-close" onClick={() => setMode('explore')}>✕</button>
