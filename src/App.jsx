@@ -1,13 +1,13 @@
 import './App.css'
 import 'leaflet/dist/leaflet.css'
 import { useState } from 'react'
-import { GeoJSON } from 'react-leaflet'
-import riverData from './data/river.json'
 import { MapContainer, TileLayer } from 'react-leaflet'
 import { Ear, Footprints, Sprout, Shell } from 'lucide-react'
 function App() {
   const [activeNodes, setActiveNodes] = useState([])
+  const [mode, setMode] = useState('explore')
   return (<>
+  <button className="encounter-trigger" onClick={() => setMode('encounter')}>+</button>
  <div className="controls">
 
   <button
@@ -72,27 +72,12 @@ function App() {
 >
 
   <TileLayer
-    attribution='&copy; OpenStreetMap contributors'
-   url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-  />
-<GeoJSON
-  data={riverData}
-  style={(feature) => {
-    const isPolygon = feature.geometry.type === 'Polygon' || feature.geometry.type === 'MultiPolygon'
-    return isPolygon
-      ? {
-          color: 'rgba(120, 190, 255, 0.15)',
-          weight: 0.5,
-          fillColor: 'rgba(120, 190, 255, 0.12)',
-          fillOpacity: 1
-        }
-      : {
-          color: 'rgba(120, 190, 255, 0.6)',
-          weight: 2,
-          opacity: 0.7
-        }
-  }}
+    
+ attribution='&copy; OpenStreetMap contributors'
+  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+  className="dark-tiles"
 />
+
 </MapContainer>
                   </>
     )
