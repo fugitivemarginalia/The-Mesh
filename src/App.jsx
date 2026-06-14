@@ -1,27 +1,27 @@
 import './App.css'
 import 'leaflet/dist/leaflet.css'
 import { MapContainer, TileLayer } from 'react-leaflet'
-import { Ear, Hand, Footprints, Sprout } from 'lucide-react'
+import { Ear, Footprints, Sprout, Shell } from 'lucide-react'
 function App() {
   return (<>
  <div className="controls">
   <button className="hear">
-    <Ear className="icon" />
+    <Ear className="icon icon-hear" />
     <span className="label">Hear</span>
   </button>
 
-  <button className="hold">
-   <Hand className="icon" />   
-    <span className="label">Hold</span>
+  <button className="tell">
+  < Shell className="icon icon-tell" />   
+    <span className="label">Tell</span>
   </button>
 
   <button className="walk">
-   <Footprints className="icon" />
+   <Footprints className="icon icon-walk" />
     <span className="label">Walk</span>
   </button>
 
   <button className="tend">
-   <Sprout className="icon" />
+   <Sprout className="icon icon-tend" />
    <span className="label">Tend</span>
   </button>
 </div>
@@ -53,4 +53,7 @@ function App() {
                   </>
     )
 }
+
+
+
 export default App
