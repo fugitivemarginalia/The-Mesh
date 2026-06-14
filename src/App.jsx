@@ -2,7 +2,7 @@ import './App.css'
 import 'leaflet/dist/leaflet.css'
 import { useState } from 'react'
 import { GeoJSON } from 'react-leaflet'
-import riverData from './data/river.geojson'
+import riverData from './data/river.json'
 import { MapContainer, TileLayer } from 'react-leaflet'
 import { Ear, Footprints, Sprout, Shell } from 'lucide-react'
 function App() {
@@ -11,7 +11,7 @@ function App() {
  <div className="controls">
 
   <button
-  className={`hear ${activeNodes.includes('hear') ? 'foreground' : ''}`}
+  className={`hear ${activeNodes.includes('hear') ? 'foreground' : activeNodes.length > 0 ? 'dimmed' : ''}`}
   onClick={() => setActiveNodes(prev =>
   prev.includes('hear') ? prev.filter(n => n !== 'hear') : [...prev, 'hear']
 )}
@@ -24,7 +24,7 @@ function App() {
 
 <button
 
-  className={`tell ${activeNodes.includes('tell') ? 'foreground' : ''}`}
+  className={`tell ${activeNodes.includes('tell') ? 'foreground' : activeNodes.length > 0 ? 'dimmed' : ''}`}
   onClick={() => setActiveNodes(prev =>
     prev.includes('tell') ? prev.filter(n => n !== 'tell') : [...prev, 'tell']
   )}
@@ -33,7 +33,7 @@ function App() {
     <span className="label">Tell</span>
   </button>
 <button
-  className={`walk ${activeNodes.includes('walk') ? 'foreground' : ''}`}
+  className={`walk ${activeNodes.includes('walk') ? 'foreground' : activeNodes.length > 0 ? 'dimmed' : ''}`}
   onClick={() => setActiveNodes(prev =>
     prev.includes('walk') ? prev.filter(n => n !== 'walk') : [...prev, 'walk']
   )}
@@ -42,7 +42,7 @@ function App() {
     <span className="label">Walk</span>
   </button>
   <button
-  className={`tend ${activeNodes.includes('tend') ? 'foreground' : ''}`}
+  className={`tend ${activeNodes.includes('tend') ? 'foreground' : activeNodes.length > 0 ? 'dimmed' : ''}`}
   onClick={() => setActiveNodes(prev =>
     prev.includes('tend') ? prev.filter(n => n !== 'tend') : [...prev, 'tend']
   )}
@@ -73,14 +73,24 @@ function App() {
 
   <TileLayer
     attribution='&copy; OpenStreetMap contributors'
-    url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+   url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
   />
 <GeoJSON
   data={riverData}
-  style={{
-    color: 'rgba(120, 190, 255, 0.6)',
-    weight: 2,
-    opacity: 0.7
+  style={(feature) => {
+    const isPolygon = feature.geometry.type === 'Polygon' || feature.geometry.type === 'MultiPolygon'
+    return isPolygon
+      ? {
+          color: 'rgba(120, 190, 255, 0.15)',
+          weight: 0.5,
+          fillColor: 'rgba(120, 190, 255, 0.12)',
+          fillOpacity: 1
+        }
+      : {
+          color: 'rgba(120, 190, 255, 0.6)',
+          weight: 2,
+          opacity: 0.7
+        }
   }}
 />
 </MapContainer>
