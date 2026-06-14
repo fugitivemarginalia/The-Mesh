@@ -1,7 +1,8 @@
 import './App.css'
 import 'leaflet/dist/leaflet.css'
 import { useState } from 'react'
-
+import { GeoJSON } from 'react-leaflet'
+import riverData from './data/river.geojson'
 import { MapContainer, TileLayer } from 'react-leaflet'
 import { Ear, Footprints, Sprout, Shell } from 'lucide-react'
 function App() {
@@ -74,7 +75,14 @@ function App() {
     attribution='&copy; OpenStreetMap contributors'
     url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
   />
-
+<GeoJSON
+  data={riverData}
+  style={{
+    color: 'rgba(120, 190, 255, 0.6)',
+    weight: 2,
+    opacity: 0.7
+  }}
+/>
 </MapContainer>
                   </>
     )
