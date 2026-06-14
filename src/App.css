@@ -150,7 +150,7 @@ body {
   position: fixed;
   bottom: 32px;
   right: 32px;
-  z-index: 1000;
+  z-index: 9999;
   width: 56px;
   height: 56px;
   border-radius: 50%;
@@ -166,6 +166,7 @@ body {
   color: rgba(255, 255, 255, 0.8);
   font-size: 28px;
   cursor: pointer;
+  pointer-events: all;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -174,4 +175,62 @@ body {
     0 0 8px rgba(255, 255, 255, 0.15),
     0 0 40px rgba(255, 255, 255, 0.08),
     0 0 60px rgba(255, 255, 255, 0.05);
+}.encounter-close {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 9999;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid rgba(255, 100, 100, 0.4);
+  color: rgba(255, 100, 100, 0.7);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.portal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(2, 5, 8, 0.96);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  color: var(--portal-color);
+}
+
+.portal-text {
+  max-width: 480px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.portal-enter,
+.portal-exit {
+  background: transparent;
+  border: 1px solid var(--portal-color);
+  color: var(--portal-color);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.portal-enter {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+}
+
+.portal-exit {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 36px;
+  height: 36px;
 }
