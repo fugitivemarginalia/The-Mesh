@@ -1,12 +1,23 @@
 import './App.css'
 import 'leaflet/dist/leaflet.css'
 import { useState } from 'react'
-import { MapContainer, TileLayer } from 'react-leaflet'
+import { MapContainer, TileLayer, useMapEvents } from 'react-leaflet'
 import { Ear, Footprints, Sprout, Shell } from 'lucide-react'
 import VerbPortal from './VerbPortal'
 function App() {
   const [mode, setMode] = useState('landing')
   const [selectedVerb, setSelectedVerb] = useState(null)
+  const [pendingLocation, setPendingLocation] = useState(null)
+  function MapClickHandler() {
+  useMapEvents({
+    click(e) {
+      if (mode === 'chooseLocation') {
+        setPendingLocation(e.latlng)
+      }
+    }
+  })
+  return null
+}
   return (<>
 
   {mode === 'landing' && (
@@ -59,7 +70,14 @@ onClick={() => { setSelectedVerb('walk'); setMode('portal') }}
     
   />
 )}{mode === 'chooseLocation' && (
-  <button className="encounter-close" onClick={() => { setMode('encounter'); setSelectedVerb(null) }}>✖</button>
+  <>
+    <button className="encounter-close" onClick={() => { setMode('encounter'); setSelectedVerb(null) }}>✖</button>
+    {pendingLocation && (
+      <div style={{ position: 'fixed', top: 20, left: 20, color: 'white', zIndex: 9999 }}>
+        {pendingLocation.lat.toFixed(4)}, {pendingLocation.lng.toFixed(4)}
+      </div>
+    )}
+  </>
 )}
 
 <MapContainer
@@ -86,6 +104,7 @@ onClick={() => { setSelectedVerb('walk'); setMode('portal') }}
   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
   className="dark-tiles"
 />
+<MapClickHandler />
 
 
 
