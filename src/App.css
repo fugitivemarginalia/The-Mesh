@@ -79,8 +79,8 @@ body {
 }
 
 .controls button {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   background: radial-gradient(
     circle at center,
@@ -280,7 +280,7 @@ body {
   display: grid;
   grid-template-columns: 65px 65px;
   grid-template-rows: 65px 65px 65px;
-  gap: 20px;
+  gap: 40px;
   justify-items: center;
   z-index: 1000;
   background: rgba(2, 30, 40, 0.7);
