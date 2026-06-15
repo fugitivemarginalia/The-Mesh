@@ -16,9 +16,8 @@ function App() {
   </div>
 )}
  
- {mode === 'encounter' && <div className="controls">
-  
-<button className="encounter-close" onClick={() => setMode('explore')}>✕</button>
+ {mode === 'encounter' && <button className="encounter-close" onClick={() => { setMode('explore'); setSelectedVerb(null) }}>✕</button>}
+{mode === 'encounter' && <div className="controls">
 
 <button className={`hear ${selectedVerb === 'hear' ? 'foreground' : selectedVerb ? 'dimmed' : ''}`}
 onClick={() => { setSelectedVerb('hear'); setMode('portal') }} >
