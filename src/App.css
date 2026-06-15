@@ -185,14 +185,14 @@ body {
   height: 30px;
   border-radius: 50%;
   background: transparent;
-  border: 3px solid rgba(252, 26, 150, 0.604);
+  border: none;
   color: rgba(254, 4, 175, 0.917);
   font-size: 18px;
-  font-style:bold;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: bold;
 }
 .portal {
   position: fixed;
@@ -215,7 +215,7 @@ body {
   margin-bottom: 2.5rem;
 }
 
-.portal-enter,
+
 .portal-exit {
   background: transparent;
   border: 1px solid var(--portal-color);
@@ -243,37 +243,50 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-top: 120px;
   background: rgba(2, 30, 40, 0.824);
-  gap: 16px;
+  gap: 14px;
 }
 
 .landing-title {
   color: rgba(255, 255, 255, 0.9);
   font-size: 48px;
   font-weight: 200;
-  letter-spacing: 4px;
-  margin: 0;
-}
-
-.landing-sub {
-  color: rgba(245, 71, 149, 0.73);
-  font-size: 13px;
   letter-spacing: 3px;
   margin: 0;
 }
 
-.landing-enter {
-  margin-top: 32px;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: rgba(255, 255, 255, 0.6);
-  padding: 10px 32px;
-  border-radius: 20px;
-  font-size: 13px;
+.landing-sub {
+  color: rgba(11, 179, 230, 0.982);
+  font-size: 14px;
   letter-spacing: 2px;
+  margin: 0;
+}
+
+.landing-enter {
+  position: fixed;
+  bottom: 40px;
+  right: 30px;
+  z-index: 9999;
+  width: 30px;
+  height: auto;
+  background: none;
+  color: rgba(254, 4, 175, 0.917);
+  font-size: .9rem;
   cursor: pointer;
-}.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+line-height: 1;
+outline: none;
+box-shadow: none;
+-webkit-appearance: none;
+appearance: none;
+border: none;
+}
+  .controls {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -289,4 +302,19 @@ body {
   height: 100vh;
   align-content: center;
   justify-content: center;
+}
+.portal-cta {
+  background: transparent;
+  border: none;
+  color: var(--portal-color);
+  font-size: 1rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-family: 'Source Sans', sans-serif;
+  font-weight: 300;
+}
+.portal-cta:hover {
+  text-decoration: underline;
+  opacity: 0.8;
 }

@@ -8,16 +8,16 @@ function App() {
   const [mode, setMode] = useState('landing')
   const [selectedVerb, setSelectedVerb] = useState(null)
   return (<>
-  
+
   {mode === 'landing' && (
   <div className="landing">
-    <h1 className="landing-title">the mesh</h1>
-    <p className="landing-sub">encounter · relate · reveal</p>
-    <button className="landing-enter" onClick={() => setMode('encounter')}>enter</button>
+    <h1 className="landing-title">shannon</h1>
+  <p className="landing-sub">a networked encounter with place</p>
+<button className="landing-enter" onClick={() => setMode('encounter')}>enter the fold</button>  
   </div>
 )}
  
- {mode === 'encounter' && <button className="encounter-close" onClick={() => { setMode('landing'); setSelectedVerb(null) }}>✕</button>}
+ {mode === 'encounter' && <button className="encounter-close" onClick={() => { setMode('landing'); setSelectedVerb(null) }}>✖</button>}
 {mode === 'encounter' && <div className="controls">
 
 <button className={`hear ${selectedVerb === 'hear' ? 'foreground' : selectedVerb ? 'dimmed' : ''}`}
@@ -59,7 +59,7 @@ onClick={() => { setSelectedVerb('walk'); setMode('portal') }}
     
   />
 )}{mode === 'chooseLocation' && (
-  <button className="encounter-close" onClick={() => { setMode('encounter'); setSelectedVerb(null) }}>✕</button>
+  <button className="encounter-close" onClick={() => { setMode('encounter'); setSelectedVerb(null) }}>✖</button>
 )}
 
 <MapContainer
