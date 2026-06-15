@@ -12,7 +12,7 @@ function App() {
   <div className="landing">
     <h1 className="landing-title">the mesh</h1>
     <p className="landing-sub">encounter · relate · reveal</p>
-    <button className="landing-enter" onClick={() => setMode('explore')}>enter</button>
+    <button className="landing-enter" onClick={() => setMode('encounbter')}>enter</button>
   </div>
 )}
  {mode === 'explore' && <button className="encounter-trigger" onClick={() => { setMode('encounter'); setSelectedVerb(null) }}>Enter</button>}
