@@ -15,7 +15,7 @@ function App() {
     <button className="landing-enter" onClick={() => setMode('encounbter')}>enter</button>
   </div>
 )}
- {mode === 'explore' && <button className="encounter-trigger" onClick={() => { setMode('encounter'); setSelectedVerb(null) }}>Enter</button>}
+ 
  {mode === 'encounter' && <div className="controls">
   
 <button className="encounter-close" onClick={() => setMode('explore')}>✕</button>
