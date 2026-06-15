@@ -11,16 +11,16 @@ body {
 }
 
 .controls {
-  position: absolute;
-  top: 0px;
-  left:0px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   z-index: 1000;
 }
 
 .hear {
-  position: absolute;
-  top: 60px;
-  left: 85px;
+ 
   color: rgba(255, 219, 120, 0.843);
    
   border: 2px solid rgba(255, 211, 100, 0.774);
@@ -34,9 +34,7 @@ body {
 }
 
 .tell {
-  position: absolute;
-  top: 140px;
-  left: 35px;
+ 
   color: rgba(140, 255, 180, 0.899);
   
   border: 2px solid rgba(140, 255, 180, 0.684);
@@ -49,9 +47,7 @@ body {
 }
 
 .walk {
-  position: absolute;
-  top: 140px;
-  left: 135px;
+  
   color: rgba(120, 190, 255, 1);
   
   border: 2px solid rgba(120, 190, 255, 0.959);
@@ -64,9 +60,7 @@ body {
 
 
 .tend {
-  position: absolute;
-  top: 220px;
-  left: 85px;
+  
   color: rgba(220, 170, 255, 0.9);
 
   border: 2px solid rgba(220, 170, 255, 0.744);
