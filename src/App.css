@@ -318,3 +318,6 @@ border: none;
   text-decoration: underline;
   opacity: 0.8;
 }
+.leaflet-control-zoom {
+  display: none;
+}
