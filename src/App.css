@@ -235,3 +235,41 @@ body {
   width: 36px;
   height: 36px;
 }
+.landing {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(2, 30, 40, 0.95);
+  gap: 16px;
+}
+
+.landing-title {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 48px;
+  font-weight: 200;
+  letter-spacing: 4px;
+  margin: 0;
+}
+
+.landing-sub {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 13px;
+  letter-spacing: 3px;
+  margin: 0;
+}
+
+.landing-enter {
+  margin-top: 32px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.6);
+  padding: 10px 32px;
+  border-radius: 20px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}

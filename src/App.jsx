@@ -5,9 +5,16 @@ import { MapContainer, TileLayer } from 'react-leaflet'
 import { Ear, Footprints, Sprout, Shell } from 'lucide-react'
 import VerbPortal from './VerbPortal'
 function App() {
-  const [mode, setMode] = useState('explore')
+  const [mode, setMode] = useState('landing')
   const [selectedVerb, setSelectedVerb] = useState(null)
   return (<>
+  {mode === 'landing' && (
+  <div className="landing">
+    <h1 className="landing-title">the mesh</h1>
+    <p className="landing-sub">encounter · relate · reveal</p>
+    <button className="landing-enter" onClick={() => setMode('explore')}>enter</button>
+  </div>
+)}
  {mode === 'explore' && <button className="encounter-trigger" onClick={() => { setMode('encounter'); setSelectedVerb(null) }}>Enter</button>}
  {mode === 'encounter' && <div className="controls">
   
