@@ -47,9 +47,12 @@ onClick={() => { setSelectedVerb('walk'); setMode('portal') }}
   {mode === 'portal' && (
   <VerbPortal
     verb={selectedVerb}
-    onEnter={() => setMode('chooseLocation')}
+    onEnter={() => setMode('chooseLocation')}use
     onExit={() => { setMode('explore'); setSelectedVerb(null) }}
+    
   />
+)}{mode === 'chooseLocation' && (
+  <button className="encounter-close" onClick={() => setMode('encounter')}>✕</button>
 )}
 {mode === 'portal' && (
   <VerbPortal
