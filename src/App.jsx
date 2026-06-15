@@ -47,20 +47,14 @@ onClick={() => { setSelectedVerb('walk'); setMode('portal') }}
   {mode === 'portal' && (
   <VerbPortal
     verb={selectedVerb}
-    onEnter={() => setMode('chooseLocation')}use
+    onEnter={() => setMode('chooseLocation')}
     onExit={() => { setMode('explore'); setSelectedVerb(null) }}
     
   />
 )}{mode === 'chooseLocation' && (
   <button className="encounter-close" onClick={() => setMode('encounter')}>✕</button>
 )}
-{mode === 'portal' && (
-  <VerbPortal
-    verb={selectedVerb}
-    onEnter={() => setMode('chooseLocation')}
-    onExit={() => { setMode('explore'); setSelectedVerb(null) }}
-  />
-)}
+
 <MapContainer
   center={[52.711114, -8.877]}
   zoom={15}
