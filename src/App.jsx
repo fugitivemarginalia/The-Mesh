@@ -8,6 +8,7 @@ function App() {
   const [mode, setMode] = useState('landing')
   const [selectedVerb, setSelectedVerb] = useState(null)
   return (<>
+  
   {mode === 'landing' && (
   <div className="landing">
     <h1 className="landing-title">the mesh</h1>
