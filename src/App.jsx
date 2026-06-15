@@ -4,6 +4,15 @@ import { useState } from 'react'
 import { MapContainer, TileLayer, useMapEvents } from 'react-leaflet'
 import { Ear, Footprints, Sprout, Shell } from 'lucide-react'
 import VerbPortal from './VerbPortal'
+function MeshForm({ verb, location, onCancel }) {
+  return (
+    <div className="encounter-form">
+      <button className="encounter-close" onClick={onCancel}>✖</button>
+      <h2 className="form-verb">{verb}</h2>
+      <p className="form-location">{location.lat.toFixed(4)}, {location.lng.toFixed(4)}</p>
+    </div>
+  )
+}
 function App() {
   const [mode, setMode] = useState('landing')
   const [selectedVerb, setSelectedVerb] = useState(null)
@@ -73,9 +82,11 @@ onClick={() => { setSelectedVerb('walk'); setMode('portal') }}
   <>
     <button className="encounter-close" onClick={() => { setMode('encounter'); setSelectedVerb(null) }}>✖</button>
     {pendingLocation && (
-      <div style={{ position: 'fixed', top: 20, left: 20, color: 'white', zIndex: 9999 }}>
-        {pendingLocation.lat.toFixed(4)}, {pendingLocation.lng.toFixed(4)}
-      </div>
+      <MeshForm
+        verb={selectedVerb}
+        location={pendingLocation}
+        onCancel={() => { setMode('encounter'); setSelectedVerb(null); setPendingLocation(null) }}
+      />
     )}
   </>
 )}
