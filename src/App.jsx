@@ -235,7 +235,7 @@ onClick={() => { setSelectedVerb('walk'); setMode('portal') }}
     <button className="encounter-close" onClick={() => { setMode('encounter'); setSelectedVerb(null) }}>✖</button>
     <div className="location-fade" />
    {!proposedLocation && (
-      <div className="placement-hint">tap the map to place your encounter</div>
+      <div className="placement-hint">locate event</div>
     )}
     {proposedLocation && !pendingLocation && (
       <div className="placement-confirm">
