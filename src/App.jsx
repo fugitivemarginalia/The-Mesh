@@ -160,7 +160,6 @@ function MeshForm({ verb, location, onCancel, onSave }) {
 
 function App() {
   const [mode, setMode] = useState('landing')
-  const [showNodes, setShowNodes] = useState(false)
   const [selectedVerb, setSelectedVerb] = useState(null)
   const [pendingLocation, setPendingLocation] = useState(null)
   const [proposedLocation, setProposedLocation] = useState(null)
@@ -170,15 +169,7 @@ function App() {
 })
   const [activeEncounter, setActiveEncounter] = useState(null)
   const [mapRef, setMapRef] = useState(null)
-useEffect(() => {
-  if (mode === 'explore') {
-    setShowNodes(false)
 
-    setTimeout(() => {
-      setShowNodes(true)
-    }, 800)
-  }
-}, [mode])
   function MapClickHandler() {
   useMapEvents({
     click(e) {
