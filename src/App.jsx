@@ -102,6 +102,7 @@ function MeshForm({ verb, location, onCancel, onSave }) {
     setList(prev => prev.includes(value) ? prev.filter(v => v !== value) : [...prev, value])
   }
   const handleSave = () => {
+     console.log("saving now")
     onSave({
       id: Date.now(),
       portal: verb,
