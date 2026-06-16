@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { MapContainer, TileLayer, useMapEvents } from 'react-leaflet'
 import { Ear, Footprints, Sprout, Shell } from 'lucide-react'
 import VerbPortal from './VerbPortal'
-
+import { CircleMarker } from 'react-leaflet'
 function MeshForm({ verb, location, onCancel }) {
   return (
     <div className="encounter-form">
@@ -21,13 +21,13 @@ function App() {
   const [mode, setMode] = useState('landing')
   const [selectedVerb, setSelectedVerb] = useState(null)
   const [pendingLocation, setPendingLocation] = useState(null)
-  
-}
-  function MapClickHandler() {
+  const [proposedLocation, setProposedLocation] = useState(null)
+
+function MapClickHandler() {
   useMapEvents({
     click(e) {
       if (mode === 'chooseLocation') {
-        setPendingLocation(e.latlng)
+        setProposedLocation(e.latlng)
       }
     }
   })
@@ -80,18 +80,28 @@ onClick={() => { setSelectedVerb('walk'); setMode('portal') }}
   {mode === 'portal' && (
   <VerbPortal
     verb={selectedVerb}
-    onEnter={() => setMode('chooseLocation')}
-    onExit={() => { setMode('encounter'); setSelectedVerb(null) }}
+    onEnter={() => { setMode('chooseLocation'); setPendingLocation(null) }}  
+   onExit={() => { setMode('encounter'); setSelectedVerb(null); setPendingLocation(null) }}
     
   />
 )}{mode === 'chooseLocation' && (
   <>
     <button className="encounter-close" onClick={() => { setMode('encounter'); setSelectedVerb(null) }}>✖</button>
+    <div className="location-fade" />
+   {!proposedLocation && (
+      <div className="placement-hint">tap the map to place your encounter</div>
+    )}
+    {proposedLocation && !pendingLocation && (
+      <div className="placement-confirm">
+        <button className="confirm-place" onClick={() => setPendingLocation(proposedLocation)}>place here</button>
+        
+      </div>
+    )}
     {pendingLocation && (
       <MeshForm
         verb={selectedVerb}
         location={pendingLocation}
-        onCancel={() => { setMode('encounter'); setSelectedVerb(null); setPendingLocation(null) }}
+        onCancel={() => { setMode('encounter'); setSelectedVerb(null); setPendingLocation(null); setProposedLocation(null) }}
       />
     )}
   </>
@@ -121,6 +131,17 @@ onClick={() => { setSelectedVerb('walk'); setMode('portal') }}
   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
   className="dark-tiles"
 />
+{mode === 'chooseLocation' && proposedLocation && (
+  <CircleMarker
+    center={[proposedLocation.lat, proposedLocation.lng]}
+    radius={8}
+    pathOptions={{
+      color: 'white',
+      fillColor: 'white',
+      fillOpacity: 0.8
+    }}
+  />
+)}
 <MapClickHandler />
 
 
@@ -129,7 +150,7 @@ onClick={() => { setSelectedVerb('walk'); setMode('portal') }}
                   </>
     )
 
-
+  }
 
 
 export default App

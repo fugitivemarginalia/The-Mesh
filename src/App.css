@@ -206,6 +206,7 @@ body {
   text-align: center;
   padding: 2rem;
   color: var(--portal-color);
+  animation: fadeIn 0.8s ease;
 }
 
 .portal-text {
@@ -247,6 +248,7 @@ body {
   padding-top: 120px;
   background: rgba(2, 30, 40, 0.824);
   gap: 14px;
+  animation: fadeIn 0.8s ease;
 }
 
 .landing-title {
@@ -302,6 +304,7 @@ border: none;
   height: 100vh;
   align-content: center;
   justify-content: center;
+  animation: fadeIn 0.8s ease;
 }
 .portal-cta {
   background: transparent;
@@ -334,6 +337,7 @@ border: none;
   justify-content: center;
   padding: 2rem;
   color: white;
+  animation: fadeIn 0.8s ease;
 }
 
 .form-verb {
@@ -373,4 +377,64 @@ border: none;
   font-size: 0.9rem;
   letter-spacing: 1px;
   cursor: pointer;
+}.placement-confirm {
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  gap: 12px;
+}
+
+.confirm-place {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.8);
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.confirm-cancel {
+  background: transparent;
+  border: 1px solid rgba(255,100,100,0.4);
+  color: rgba(255,100,100,0.7);
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.placement-hint {
+  position: fixed;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+  letter-spacing: 1px;
+  pointer-events: none;
+  background: rgba(2, 30, 40, 0.7);
+  padding: 8px 20px;
+  border-radius: 20px;
+}@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}.location-fade {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(2, 30, 40, 0.95);
+  animation: fadeOut 1s ease forwards;
+  pointer-events: none;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
 }
