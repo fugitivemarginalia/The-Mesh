@@ -102,7 +102,7 @@ function MeshForm({ verb, location, onCancel, onSave }) {
     setList(prev => prev.includes(value) ? prev.filter(v => v !== value) : [...prev, value])
   }
   const handleSave = () => {
-     console.log("saving now")
+    
     onSave({
       id: Date.now(),
       portal: verb,
@@ -180,7 +180,7 @@ function App() {
     }
   })
   return null
-} console.log(encounters)
+}
 
 
   return (<>
@@ -193,7 +193,7 @@ function App() {
   </div>
 )}
  
- {mode === 'encounter' && <button className="encounter-close" onClick={() => { setMode('landing'); setSelectedVerb(null) }}>✖</button>}
+ {mode === 'encounter' && !activeEncounter && <button className="encounter-close" onClick={() => { setMode('landing'); setSelectedVerb(null) }}>✖</button>}
 {mode === 'encounter' && <div className="controls">
 
 <button className={`hear ${selectedVerb === 'hear' ? 'foreground' : selectedVerb ? 'dimmed' : ''}`}
@@ -258,7 +258,7 @@ onClick={() => { setSelectedVerb('walk'); setMode('portal') }}
   localStorage.setItem('mesh-encounters', JSON.stringify(updated))
   return updated
 })
-    setMode('explore')
+    setMode('encounter')
     setSelectedVerb(null)
     setPendingLocation(null)
     setProposedLocation(null)

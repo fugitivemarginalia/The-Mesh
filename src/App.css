@@ -194,6 +194,23 @@ body {
   justify-content: center;
   font-weight: bold;
 }
+.card-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  color: rgba(254, 4, 175, 0.917);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
 .portal {
   position: fixed;
   inset: 0;
