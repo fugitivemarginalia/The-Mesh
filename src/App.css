@@ -420,11 +420,11 @@ border: none;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(250, 244, 248, 0.879);
   font-size: 13px;
   letter-spacing: 1px;
   pointer-events: none;
-  background: rgba(2, 30, 40, 0.7);
+  background: rgba(239, 15, 187, 0.7);
   padding: 8px 20px;
   border-radius: 20px;
 }@keyframes fadeIn {

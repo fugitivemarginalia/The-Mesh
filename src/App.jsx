@@ -7,6 +7,94 @@ import VerbPortal from './VerbPortal'
 import { CircleMarker } from 'react-leaflet'
 
 function MeshForm({ verb, location, onCancel, onSave }) {
+  const config = {
+    hear: {
+      q1: 'what reached your attention?',
+      q1tags: ['Birdsong','Wind','Water','Machinery','Traffic','Voices','Silence','Music','Aircraft','Animal sounds','Unknown'],
+      q2: 'what kind of sound was it?',
+      q2tags: ['Human','Nonhuman','Mechanical','Natural','Mixed','Unknown'],
+      placeholder: 'Unexpected silence compared with yesterday',
+      save: 'record encounter'
+    },
+    tell: {
+      q1: 'what are you bringing into the field?',
+      q1tags: ['Memory','Story','Encounter','History','Biodiversity','Walk','Folklore','Change','Concern','Discovery','Unknown'],
+      q2: 'what kind of relation does it hold?',
+      q2tags: ['Human','Nonhuman','Ecological','Historical','Personal','Collective','Seasonal','Unexpected','Everyday','Disappearing','Emerging','Unknown'],
+      placeholder: 'what became possible here?',
+      save: 'place story into network'
+    },
+    walk: {
+  q1: 'what kind of movement brought you here?',
+  q1tags: [
+    'Routine',
+    'Exploration',
+    'Exercise',
+    'Journey',
+    'Commute',
+    'Wandering',
+    'Social',
+    'Pilgrimage',
+    'Observation',
+    'Errand',
+    'Return',
+    'Unknown'
+  ],
+  q2: 'what shaped this movement?',
+  q2tags: [
+    'Habit',
+    'Landscape',
+    'Weather',
+    'Community',
+    'Necessity',
+    'Curiosity',
+    'Memory',
+    'Access',
+    'Nature',
+    'Infrastructure',
+    'Chance',
+    'Unknown'
+  ],
+  placeholder: 'describe the path and what emerged along the way',
+  save: 'trace path into network'
+},
+   tend: {
+  q1: 'what kind of care entered this place?',
+  q1tags: [
+    'Repair',
+    'Planting',
+    'Cleaning',
+    'Helping',
+    'Restoration',
+    'Protection',
+    'Maintenance',
+    'Teaching',
+    'Healing',
+    'Supporting',
+    'Watching',
+    'Unknown'
+  ],
+  q2: 'what was being sustained?',
+  q2tags: [
+    'Habitat',
+    'Community',
+    'Water',
+    'Wildlife',
+    'Memory',
+    'Shared Space',
+    'Landscape',
+    'Infrastructure',
+    'Relationships',
+    'Knowledge',
+    'Future',
+    'Unknown'
+  ],
+  placeholder: 'describe what was cared for and why it matters here',
+  save: 'place care into network'
+} 
+  }
+
+  const q = config[verb] || config.hear
   const [noticed, setNoticed] = useState([])
   const [soundType, setSoundType] = useState([])
   const [note, setNote] = useState('')
@@ -27,20 +115,45 @@ function MeshForm({ verb, location, onCancel, onSave }) {
   return (
     <div className="encounter-form">
       <button className="encounter-close" onClick={onCancel}>✖</button>
-      <p className="form-question">what reached your attention?</p>
-      <div className="tag-grid">
-        {['Birdsong','Wind','Water','Machinery','Traffic','Voices','Silence','Music','Aircraft','Animal sounds','Unknown'].map(tag => (
-          <button key={tag} className={`tag ${noticed.includes(tag) ? 'tag-active' : ''}`} onClick={() => toggle(noticed, setNoticed, tag)}>{tag}</button>
-        ))}
-      </div>
-      <p className="form-question">what kind of sound was it?</p>
-      <div className="tag-grid">
-        {['Human','Nonhuman','Mechanical','Natural','Mixed','Unknown'].map(tag => (
-          <button key={tag} className={`tag ${soundType.includes(tag) ? 'tag-active' : ''}`} onClick={() => toggle(soundType, setSoundType, tag)}>{tag}</button>
-        ))}
-      </div>
-      <textarea className="form-text" placeholder="Unexpected silence compared with yesterday" maxLength={120} value={note} onChange={e => setNote(e.target.value)} />
-      <button className="form-save" onClick={handleSave}>record encounter</button>
+      <p className="form-question">{q.q1}</p>
+
+<div className="tag-grid">
+  {q.q1tags.map(tag => (
+    <button
+      key={tag}
+      className={`tag ${noticed.includes(tag) ? 'tag-active' : ''}`}
+      onClick={() => toggle(noticed, setNoticed, tag)}
+    >
+      {tag}
+    </button>
+  ))}
+</div>
+
+<p className="form-question">{q.q2}</p>
+
+<div className="tag-grid">
+  {q.q2tags.map(tag => (
+    <button
+      key={tag}
+      className={`tag ${soundType.includes(tag) ? 'tag-active' : ''}`}
+      onClick={() => toggle(soundType, setSoundType, tag)}
+    >
+      {tag}
+    </button>
+  ))}
+</div>
+
+<textarea
+  className="form-text"
+  placeholder={q.placeholder}
+  maxLength={120}
+  value={note}
+  onChange={e => setNote(e.target.value)}
+/>
+
+<button className="form-save" onClick={handleSave}>
+  {q.save}
+</button>
     </div>
   )
 }
