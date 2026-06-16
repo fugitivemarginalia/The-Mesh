@@ -5,14 +5,42 @@ import { MapContainer, TileLayer, useMapEvents } from 'react-leaflet'
 import { Ear, Footprints, Sprout, Shell } from 'lucide-react'
 import VerbPortal from './VerbPortal'
 import { CircleMarker } from 'react-leaflet'
-function MeshForm({ verb, location, onCancel }) {
+
+function MeshForm({ verb, location, onCancel, onSave }) {
+  const [noticed, setNoticed] = useState([])
+  const [soundType, setSoundType] = useState([])
+  const [note, setNote] = useState('')
+  const toggle = (list, setList, value) => {
+    setList(prev => prev.includes(value) ? prev.filter(v => v !== value) : [...prev, value])
+  }
+  const handleSave = () => {
+    onSave({
+      id: Date.now(),
+      portal: verb,
+      coordinates: { lat: location.lat, lng: location.lng },
+      noticed,
+      soundType,
+      note,
+    })
+  }
+
   return (
     <div className="encounter-form">
       <button className="encounter-close" onClick={onCancel}>✖</button>
-      <h2 className="form-verb">{verb}</h2>
-      <p className="form-location">{location.lat.toFixed(4)}, {location.lng.toFixed(4)}</p>
-      <textarea className="form-text" placeholder="what did you encounter here?" />
-      <button className="form-save">save encounter</button>
+      <p className="form-question">what reached your attention?</p>
+      <div className="tag-grid">
+        {['Birdsong','Wind','Water','Machinery','Traffic','Voices','Silence','Music','Aircraft','Animal sounds','Unknown'].map(tag => (
+          <button key={tag} className={`tag ${noticed.includes(tag) ? 'tag-active' : ''}`} onClick={() => toggle(noticed, setNoticed, tag)}>{tag}</button>
+        ))}
+      </div>
+      <p className="form-question">what kind of sound was it?</p>
+      <div className="tag-grid">
+        {['Human','Nonhuman','Mechanical','Natural','Mixed','Unknown'].map(tag => (
+          <button key={tag} className={`tag ${soundType.includes(tag) ? 'tag-active' : ''}`} onClick={() => toggle(soundType, setSoundType, tag)}>{tag}</button>
+        ))}
+      </div>
+      <textarea className="form-text" placeholder="Unexpected silence compared with yesterday" maxLength={120} value={note} onChange={e => setNote(e.target.value)} />
+      <button className="form-save" onClick={handleSave}>record encounter</button>
     </div>
   )
 }
@@ -22,7 +50,12 @@ function App() {
   const [selectedVerb, setSelectedVerb] = useState(null)
   const [pendingLocation, setPendingLocation] = useState(null)
   const [proposedLocation, setProposedLocation] = useState(null)
-
+  const [encounters, setEncounters] = useState(() => {
+  const saved = localStorage.getItem('mesh-encounters')
+  return saved ? JSON.parse(saved) : []
+})
+  const [activeEncounter, setActiveEncounter] = useState(null)
+  const [mapRef, setMapRef] = useState(null)
 function MapClickHandler() {
   useMapEvents({
     click(e) {
@@ -80,7 +113,7 @@ onClick={() => { setSelectedVerb('walk'); setMode('portal') }}
   {mode === 'portal' && (
   <VerbPortal
     verb={selectedVerb}
-    onEnter={() => { setMode('chooseLocation'); setPendingLocation(null) }}  
+  onEnter={() => { setMode('chooseLocation'); setPendingLocation(null); setProposedLocation(null) }}
    onExit={() => { setMode('encounter'); setSelectedVerb(null); setPendingLocation(null) }}
     
   />
@@ -99,10 +132,21 @@ onClick={() => { setSelectedVerb('walk'); setMode('portal') }}
     )}
     {pendingLocation && (
       <MeshForm
-        verb={selectedVerb}
-        location={pendingLocation}
-        onCancel={() => { setMode('encounter'); setSelectedVerb(null); setPendingLocation(null); setProposedLocation(null) }}
-      />
+  verb={selectedVerb}
+  location={pendingLocation}
+  onCancel={() => { setMode('encounter'); setSelectedVerb(null); setPendingLocation(null); setProposedLocation(null) }}
+  onSave={(encounter) => {
+  setEncounters(prev => {
+  const updated = [...prev, encounter]
+  localStorage.setItem('mesh-encounters', JSON.stringify(updated))
+  return updated
+})
+    setMode('explore')
+    setSelectedVerb(null)
+    setPendingLocation(null)
+    setProposedLocation(null)
+  }}
+/>
     )}
   </>
 )}
@@ -131,6 +175,20 @@ onClick={() => { setSelectedVerb('walk'); setMode('portal') }}
   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
   className="dark-tiles"
 />
+{activeEncounter && (
+  <div className="encounter-card">
+    <button className="encounter-close" onClick={() => setActiveEncounter(null)}>✖</button>
+    <p className="card-portal">{activeEncounter.portal}</p>
+    <p className="card-location">{activeEncounter.coordinates.lat.toFixed(4)}, {activeEncounter.coordinates.lng.toFixed(4)}</p>
+    <div className="tag-grid">
+      {activeEncounter.noticed.map(t => <span key={t} className="tag tag-active">{t}</span>)}
+    </div>
+    <div className="tag-grid">
+      {activeEncounter.soundType.map(t => <span key={t} className="tag tag-active">{t}</span>)}
+    </div>
+    {activeEncounter.note && <p className="card-note">{activeEncounter.note}</p>}
+  </div>
+)}
 {mode === 'chooseLocation' && proposedLocation && (
   <CircleMarker
     center={[proposedLocation.lat, proposedLocation.lng]}
@@ -141,7 +199,21 @@ onClick={() => { setSelectedVerb('walk'); setMode('portal') }}
       fillOpacity: 0.8
     }}
   />
-)}
+)}{encounters.map(enc => (
+  <CircleMarker
+    key={enc.id}
+    center={[enc.coordinates.lat, enc.coordinates.lng]}
+    radius={8}
+    pathOptions={{
+      color: 'rgba(255, 211, 100, 0.8)',
+      fillColor: 'rgba(255, 211, 100, 0.6)',
+      fillOpacity: 1
+    }}
+    eventHandlers={{
+      click: () => setActiveEncounter(enc)
+    }}
+  />
+))}
 <MapClickHandler />
 
 

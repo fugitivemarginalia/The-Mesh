@@ -325,19 +325,24 @@ border: none;
   display: none;
 }.encounter-form {
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  height: 65%;
   z-index: 2000;
-  background: rgba(2, 30, 40, 0.95);
+  background: rgba(2, 20, 30, 0.97);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
+  padding: 1.5rem;
   color: white;
-  animation: fadeIn 0.8s ease;
+  border-radius: 20px 20px 0 0;
+  overflow-y: auto;
+  animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
 }
 
 .form-verb {
@@ -437,4 +442,68 @@ border: none;
 @keyframes fadeOut {
   from { opacity: 1; }
   to { opacity: 0; }
+}.form-question {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.6);
+  margin: 0.75rem 0 0.5rem;
+}
+
+.tag-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.tag {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.6);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+}
+
+.tag-active {
+  border-color: rgba(255,255,255,0.8);
+  color: rgba(255,255,255,1);
+  background: rgba(255,255,255,0.1);
+}.encounter-card {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  z-index: 2000;
+  background: rgba(2, 20, 30, 0.97);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  color: white;
+  border-radius: 20px 20px 0 0;
+  animation: slideUp 0.4s ease;
+}
+
+.card-portal {
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 211, 100, 0.8);
+  margin: 0 0 0.5rem;
+}
+
+.card-location {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.3);
+  margin: 0 0 1rem;
+}
+
+.card-note {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  margin-top: 0.5rem;
+  font-style: italic;
 }
