@@ -4,19 +4,25 @@ import { useState } from 'react'
 import { MapContainer, TileLayer, useMapEvents } from 'react-leaflet'
 import { Ear, Footprints, Sprout, Shell } from 'lucide-react'
 import VerbPortal from './VerbPortal'
+
 function MeshForm({ verb, location, onCancel }) {
   return (
     <div className="encounter-form">
       <button className="encounter-close" onClick={onCancel}>✖</button>
       <h2 className="form-verb">{verb}</h2>
       <p className="form-location">{location.lat.toFixed(4)}, {location.lng.toFixed(4)}</p>
+      <textarea className="form-text" placeholder="what did you encounter here?" />
+      <button className="form-save">save encounter</button>
     </div>
   )
 }
+
 function App() {
   const [mode, setMode] = useState('landing')
   const [selectedVerb, setSelectedVerb] = useState(null)
   const [pendingLocation, setPendingLocation] = useState(null)
+  
+}
   function MapClickHandler() {
   useMapEvents({
     click(e) {
@@ -122,7 +128,7 @@ onClick={() => { setSelectedVerb('walk'); setMode('portal') }}
 </MapContainer>
                   </>
     )
-}
+
 
 
 
