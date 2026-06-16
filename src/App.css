@@ -382,6 +382,7 @@ border: none;
   font-size: 0.9rem;
   letter-spacing: 1px;
   cursor: pointer;
+  width: 60%;
 }.placement-confirm {
   position: fixed;
   bottom: 100px;

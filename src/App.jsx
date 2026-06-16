@@ -22,7 +22,7 @@ function MeshForm({ verb, location, onCancel, onSave }) {
       q2: 'what kind of relation does it hold?',
       q2tags: ['Human','Nonhuman','Ecological','Historical','Personal','Collective','Seasonal','Unexpected','Everyday','Disappearing','Emerging','Unknown'],
       placeholder: 'what became possible here?',
-      save: 'place story into network'
+      save: 'record tale '
     },
     walk: {
   q1: 'what kind of movement brought you here?',
@@ -56,7 +56,7 @@ function MeshForm({ verb, location, onCancel, onSave }) {
     'Unknown'
   ],
   placeholder: 'describe the path and what emerged along the way',
-  save: 'trace path into network'
+  save: 'record walk'
 },
    tend: {
   q1: 'what kind of care entered this place?',
@@ -90,7 +90,7 @@ function MeshForm({ verb, location, onCancel, onSave }) {
     'Unknown'
   ],
   placeholder: 'describe what was cared for and why it matters here',
-  save: 'place care into network'
+  save: 'record care'
 } 
   }
 
