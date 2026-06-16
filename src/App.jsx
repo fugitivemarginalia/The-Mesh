@@ -183,7 +183,7 @@ function App() {
 }
 
 
-  return (<>
+   (<>return
 
   {mode === 'landing' && (
   <div className="landing">
@@ -292,20 +292,7 @@ onClick={() => { setSelectedVerb('walk'); setMode('portal') }}
   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
   className="dark-tiles"
 />
-{activeEncounter && (
-  <div className="encounter-card">
-    <button className="encounter-close" onClick={() => setActiveEncounter(null)}>✖</button>
-    <p className="card-portal">{activeEncounter.portal}</p>
-    <p className="card-location">{activeEncounter.coordinates.lat.toFixed(4)}, {activeEncounter.coordinates.lng.toFixed(4)}</p>
-    <div className="tag-grid">
-      {activeEncounter.noticed.map(t => <span key={t} className="tag tag-active">{t}</span>)}
-    </div>
-    <div className="tag-grid">
-      {activeEncounter.soundType.map(t => <span key={t} className="tag tag-active">{t}</span>)}
-    </div>
-    {activeEncounter.note && <p className="card-note">{activeEncounter.note}</p>}
-  </div>
-)}
+
 {mode === 'chooseLocation' && proposedLocation && (
   <CircleMarker
     center={[proposedLocation.lat, proposedLocation.lng]}
@@ -336,6 +323,21 @@ onClick={() => { setSelectedVerb('walk'); setMode('portal') }}
 
 
 </MapContainer>
+{activeEncounter && (
+  <div className="encounter-card">
+    <button className="card-close" onClick={(e) => { e.stopPropagation();setActiveEncounter(null)}}
+    >✖</button>
+    <p className="card-portal">{activeEncounter.portal}</p>
+    <p className="card-location">{activeEncounter.coordinates.lat.toFixed(4)}, {activeEncounter.coordinates.lng.toFixed(4)}</p>
+    <div className="tag-grid">
+      {activeEncounter.noticed.map(t => <span key={t} className="tag tag-active">{t}</span>)}
+    </div>
+    <div className="tag-grid">
+      {activeEncounter.soundType.map(t => <span key={t} className="tag tag-active">{t}</span>)}
+    </div>
+    {activeEncounter.note && <p className="card-note">{activeEncounter.note}</p>}
+  </div>
+)}
                   </>
     )
 
