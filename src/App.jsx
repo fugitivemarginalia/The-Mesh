@@ -183,165 +183,138 @@ function App() {
 }
 
 
-   (<>return
-
-  {mode === 'landing' && (
-  <div className="landing">
-    <h1 className="landing-title">shannon</h1>
-  <p className="landing-sub">a networked encounter with place</p>
-<button className="landing-enter" onClick={() => setMode('encounter')}>enter the fold</button>  
-  </div>
-)}
+   return (
+    <>
+      {mode === 'landing' && (
+        <div className="landing">
+          <h1 className="landing-title">shannon</h1>
+          <p className="landing-sub">a networked encounter with place</p>
+          <button className="landing-enter" onClick={() => setMode('encounter')}>enter the fold</button>  
+        </div>
+      )}
  
- {mode === 'encounter' && !activeEncounter && <button className="encounter-close" onClick={() => { setMode('landing'); setSelectedVerb(null) }}>✖</button>}
-{mode === 'encounter' && <div className="controls">
-
-<button className={`hear ${selectedVerb === 'hear' ? 'foreground' : selectedVerb ? 'dimmed' : ''}`}
-onClick={() => { setSelectedVerb('hear'); setMode('portal') }} >
-
-    <Ear className="icon icon-hear" />
-    <span className="label">Hear</span>
-  </button>
-
-<button
-
-  className={`tell ${selectedVerb === 'tell' ? 'foreground' : selectedVerb ? 'dimmed' : ''}`}
-onClick={() => { setSelectedVerb('tell'); setMode('portal') }}
->
-  <Shell className="icon icon-tell" />   
-    <span className="label">Tell</span>
-  </button>
-<button
-  className={`walk ${selectedVerb === 'walk' ? 'foreground' : selectedVerb ? 'dimmed' : ''}`}
-onClick={() => { setSelectedVerb('walk'); setMode('portal') }}
->
-   <Footprints className="icon icon-walk" />
-    <span className="label">Walk</span>
-  </button>
-  <button
-  className={`tend ${selectedVerb === 'tend' ? 'foreground' : selectedVerb ? 'dimmed' : ''}`}
-  onClick={() => { setSelectedVerb('tend'); setMode('portal') }}
->
-  
-   <Sprout className="icon icon-tend" />
-   <span className="label">Tend</span>
-  </button>
-</div>}
-  {mode === 'portal' && (
-  <VerbPortal
-    verb={selectedVerb}
-  onEnter={() => { setMode('chooseLocation'); setPendingLocation(null); setProposedLocation(null) }}
-   onExit={() => { setMode('encounter'); setSelectedVerb(null); setPendingLocation(null) }}
-    
-  />
-)}{mode === 'chooseLocation' && (
-  <>
-    <button className="encounter-close" onClick={() => { setMode('encounter'); setSelectedVerb(null) }}>✖</button>
-    <div className="location-fade" />
-   {!proposedLocation && (
-      <div className="placement-hint">locate event</div>
-    )}
-    {proposedLocation && !pendingLocation && (
-      <div className="placement-confirm">
-        <button className="confirm-place" onClick={() => setPendingLocation(proposedLocation)}>place here</button>
-        
-      </div>
-    )}
-    {pendingLocation && (
-      <MeshForm
-  verb={selectedVerb}
-  location={pendingLocation}
-  onCancel={() => { setMode('encounter'); setSelectedVerb(null); setPendingLocation(null); setProposedLocation(null) }}
-  onSave={(encounter) => {
-  setEncounters(prev => {
-  const updated = [...prev, encounter]
-  localStorage.setItem('mesh-encounters', JSON.stringify(updated))
-  return updated
-})
-    setMode('encounter')
-    setSelectedVerb(null)
-    setPendingLocation(null)
-    setProposedLocation(null)
-  }}
-/>
-    )}
-  </>
-)}
-
-<MapContainer
-  center={[52.711114, -8.877]}
-  zoom={15}
-  scrollWheelZoom={false}
-  doubleClickZoom={true}
-
-  whenReady={(map) => {
-    setTimeout(() => {
-      map.target.invalidateSize()
-    }, 300)
-  }}
-
-  style={{
-    height: '100vh',
-    width: '100vw'
-  }}
->
-
-  <TileLayer
-    
- attribution='&copy; OpenStreetMap contributors'
-  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-  className="dark-tiles"
-/>
-
-{mode === 'chooseLocation' && proposedLocation && (
-  <CircleMarker
-    center={[proposedLocation.lat, proposedLocation.lng]}
-    radius={8}
-    pathOptions={{
-      color: 'white',
-      fillColor: 'white',
-      fillOpacity: 0.8
-    }}
-  />
-)}{encounters.map(enc => (
-  <CircleMarker
-    key={enc.id}
-    center={[enc.coordinates.lat, enc.coordinates.lng]}
-    radius={8}
-    pathOptions={{
-      color: 'rgba(255, 211, 100, 0.8)',
-      fillColor: 'rgba(255, 211, 100, 0.6)',
-      fillOpacity: 1
-    }}
-    eventHandlers={{
-      click: () => setActiveEncounter(enc)
-    }}
-  />
-))}
-<MapClickHandler />
-
-
-
-</MapContainer>
-{activeEncounter && (
-  <div className="encounter-card">
-    <button className="card-close" onClick={(e) => { e.stopPropagation();setActiveEncounter(null)}}
-    >✖</button>
-    <p className="card-portal">{activeEncounter.portal}</p>
-    <p className="card-location">{activeEncounter.coordinates.lat.toFixed(4)}, {activeEncounter.coordinates.lng.toFixed(4)}</p>
-    <div className="tag-grid">
-      {activeEncounter.noticed.map(t => <span key={t} className="tag tag-active">{t}</span>)}
-    </div>
-    <div className="tag-grid">
-      {activeEncounter.soundType.map(t => <span key={t} className="tag tag-active">{t}</span>)}
-    </div>
-    {activeEncounter.note && <p className="card-note">{activeEncounter.note}</p>}
-  </div>
-)}
-                  </>
-    )
-
-  }
-
+      {mode === 'encounter' && !activeEncounter && <button className="encounter-close" onClick={() => { setMode('landing'); setSelectedVerb(null) }}>✖</button>}
+      {mode === 'encounter' && <div className="controls">
+        <button className={`hear ${selectedVerb === 'hear' ? 'foreground' : selectedVerb ? 'dimmed' : ''}`} onClick={() => { setSelectedVerb('hear'); setMode('portal') }} >
+          <Ear className="icon icon-hear" />
+          <span className="label">Hear</span>
+        </button>
+        <button className={`tell ${selectedVerb === 'tell' ? 'foreground' : selectedVerb ? 'dimmed' : ''}`} onClick={() => { setSelectedVerb('tell'); setMode('portal') }} >
+          <Shell className="icon icon-tell" />   
+          <span className="label">Tell</span>
+        </button>
+        <button className={`walk ${selectedVerb === 'walk' ? 'foreground' : selectedVerb ? 'dimmed' : ''}`} onClick={() => { setSelectedVerb('walk'); setMode('portal') }} >
+          <Footprints className="icon icon-walk" />
+          <span className="label">Walk</span>
+        </button>
+        <button className={`tend ${selectedVerb === 'tend' ? 'foreground' : selectedVerb ? 'dimmed' : ''}`} onClick={() => { setSelectedVerb('tend'); setMode('portal') }} >
+          <Sprout className="icon icon-tend" />
+          <span className="label">Tend</span>
+        </button>
+      </div>}
+      {mode === 'portal' && (
+        <VerbPortal
+          verb={selectedVerb}
+          onEnter={() => { setMode('chooseLocation'); setPendingLocation(null); setProposedLocation(null) }}
+          onExit={() => { setMode('encounter'); setSelectedVerb(null); setPendingLocation(null) }}
+        />
+      )}
+      {mode === 'chooseLocation' && (
+        <>
+          <button className="encounter-close" onClick={() => { setMode('encounter'); setSelectedVerb(null) }}>✖</button>
+          <div className="location-fade" />
+          {!proposedLocation && (
+            <div className="placement-hint">locate event</div>
+          )}
+          {proposedLocation && !pendingLocation && (
+            <div className="placement-confirm">
+              <button className="confirm-place" onClick={() => setPendingLocation(proposedLocation)}>place here</button>
+            </div>
+          )}
+          {pendingLocation && (
+            <MeshForm
+              verb={selectedVerb}
+              location={pendingLocation}
+              onCancel={() => { setMode('encounter'); setSelectedVerb(null); setPendingLocation(null); setProposedLocation(null) }}
+              onSave={(encounter) => {
+                setEncounters(prev => {
+                  const updated = [...prev, encounter]
+                  localStorage.setItem('mesh-encounters', JSON.stringify(updated))
+                  return updated
+                })
+                setMode('encounter')
+                setSelectedVerb(null)
+                setPendingLocation(null)
+                setProposedLocation(null)
+              }}
+            />
+          )}
+        </>
+      )}
+      <MapContainer
+        center={[52.711114, -8.877]}
+        zoom={15}
+        scrollWheelZoom={false}
+        doubleClickZoom={true}
+        whenReady={(map) => {
+          setTimeout(() => {
+            map.target.invalidateSize()
+          }, 300)
+        }}
+        style={{
+          height: '100vh',
+          width: '100vw'
+        }}
+      >
+        <TileLayer
+          attribution='&copy; OpenStreetMap contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          className="dark-tiles"
+        />
+        {mode === 'chooseLocation' && proposedLocation && (
+          <CircleMarker
+            center={[proposedLocation.lat, proposedLocation.lng]}
+            radius={8}
+            pathOptions={{
+              color: 'white',
+              fillColor: 'white',
+              fillOpacity: 0.8
+            }}
+          />
+        )}
+        {encounters.map(enc => (
+          <CircleMarker
+            key={enc.id}
+            center={[enc.coordinates.lat, enc.coordinates.lng]}
+            radius={8}
+            pathOptions={{
+              color: 'rgba(255, 211, 100, 0.8)',
+              fillColor: 'rgba(255, 211, 100, 0.6)',
+              fillOpacity: 1
+            }}
+            eventHandlers={{
+              click: () => setActiveEncounter(enc)
+            }}
+          />
+        ))}
+        <MapClickHandler />
+      </MapContainer>
+      {activeEncounter && (
+        <div className="encounter-card">
+          <button className="card-close" onClick={(e) => { e.stopPropagation(); setActiveEncounter(null) }}>✖</button>
+          <p className="card-portal">{activeEncounter.portal}</p>
+          <p className="card-location">{activeEncounter.coordinates.lat.toFixed(4)}, {activeEncounter.coordinates.lng.toFixed(4)}</p>
+          <div className="tag-grid">
+            {activeEncounter.noticed.map(t => <span key={t} className="tag tag-active">{t}</span>)}
+          </div>
+          <div className="tag-grid">
+            {activeEncounter.soundType.map(t => <span key={t} className="tag tag-active">{t}</span>)}
+          </div>
+          {activeEncounter.note && <p className="card-note">{activeEncounter.note}</p>}
+        </div>
+      )}
+    </>
+  )
+}
 
 export default App
