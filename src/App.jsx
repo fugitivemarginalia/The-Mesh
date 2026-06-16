@@ -179,7 +179,9 @@ function App() {
     }
   })
   return null
-}
+} console.log(encounters)
+
+
   return (<>
 
   {mode === 'landing' && (
